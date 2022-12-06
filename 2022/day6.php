@@ -1,5 +1,7 @@
 <?php
-$test = false;
+$test = true;
+$number = 14;
+
 if($test) {
 	$inputs = [
 		"mjqjpqmgbljsphdztnvjfqwrcgsmlb",
@@ -12,24 +14,19 @@ if($test) {
 	$inputs[0] = file_get_contents('./data/day6.txt');
 }
 
-function getMarkerTh($string, $length = 4) {
-	for($i = 0; $i < strlen($string); $i++) {
+function getMarkerTh($string, $length = 4)
+{
+	for ($i = 0; $i < strlen($string); $i++) {
 		$data[] = substr($string, $i, $length);
 	}
-	foreach ($data as $key => $datum ) {
-		if(strlen($datum) == $length) {
-			$chars = str_split($datum);
-			$unique = array_unique($chars);
-			if(count($unique) == $length) {
-				$markerNumber = $key + $length;
-				break;
-			}
+	foreach ($data as $key => $datum) {
+		$chars = str_split($datum);
+		if (strlen($datum) == $length && count(array_unique($chars)) == $length) {
+			return $key + $length;
 		}
 	}
-	return $markerNumber;
 }
 
-$number = 14;
 foreach ($inputs as $input) {
 	echo getMarkerTh($input, $number);
 	echo "<br/>";
