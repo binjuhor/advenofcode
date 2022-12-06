@@ -1,5 +1,5 @@
 <?php
-$test = true;
+$test = false;
 if($test) {
 	$inputs = [
 		"mjqjpqmgbljsphdztnvjfqwrcgsmlb",
