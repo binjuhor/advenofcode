@@ -1,5 +1,5 @@
 <?php
-$test = false;
+$test = true;
 if($test) {
 	$inputs = [
 		"mjqjpqmgbljsphdztnvjfqwrcgsmlb",
@@ -29,4 +29,8 @@ function getMarkerTh($string, $length = 4) {
 	return $markerNumber;
 }
 
-echo getMarkerTh($inputs[0], 14);
+$number = 14;
+foreach ($inputs as $input) {
+	echo getMarkerTh($input, $number);
+	echo "<br/>";
+}
