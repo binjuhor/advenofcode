@@ -1,9 +1,7 @@
 <?php
 $input = file_get_contents('./data/day2.txt');
 
-// convert to array split by new line
 $data = explode("\n", $input);
-
 $matches = array_map(function($line) {
     return explode(" ", $line);
 }, $data);
