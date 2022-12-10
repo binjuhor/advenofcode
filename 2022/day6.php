@@ -1,4 +1,5 @@
 <?php
+$dataFile = './data/day6';
 $test = false;
 $number = 14;
 
@@ -11,7 +12,7 @@ if($test) {
 		"zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
 	];
 } else {
-	$inputs[0] = file_get_contents('./data/day6.txt');
+	$inputs[0] = file_get_contents($dataFile'.txt');
 }
 
 function getMarkerTh($string, $length = 4)
